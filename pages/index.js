@@ -1,8 +1,23 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import styles from '../styles/Home.module.css'
+import Link from 'next/link'
+import { useEffect, useState } from 'react';
+import Image from 'next/image'
 
 export default function Home() {
+
+  function enter() {
+    setShowI(true)
+    document.querySelector("#cant-touch").classList.add("hide")
+    document.querySelector("h1").innerText = "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
+    document.querySelector("h2").innerText = "COMO SE TIVESSE ESCOLHA"
+
+  }
+
+  const [showI, setShowI] = useState(false)
+
+  const i = <Image id="i" alt="" width="700%" height="500%" src="/3cda3aef-f126-439b-b79b-0a2ad046fb66.jpeg" />
+
   return (
     <div className={styles.container}>
       <Head>
@@ -13,56 +28,35 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Bem vinda Mama ao meu estudo criativo de nextjs!
         </h1>
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
+        <h2>Essa é a parte 1</h2>
+        {showI ? i : null}
 
         <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h2>Documentation &rarr;</h2>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+          <Link href="/mari">
+            <a style={{ "font-size": "50px", "color": "blue" }}>
+              &rarr;&rarr;&rarr;&rarr;&rarr; CLICA AQUI SE VOCÊ QUER ME PEGAR &larr;&larr;&larr;&larr;
+            </a>
+          </Link>
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h2>Learn &rarr;</h2>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
 
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h2>Examples &rarr;</h2>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h2>Deploy &rarr;</h2>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+          <Link href="/">
+            <a id="cant-touch" onClick={enter}>
+              clica aqui se não quer me pegar
+            </a>
+          </Link>
         </div>
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
-        </a>
+
       </footer>
     </div>
   )

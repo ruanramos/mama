@@ -14,3 +14,14 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.show {
+  display: flex
+}
+
+.hide {
+  display: none;
+  text-decoration: none;
+  pointer-events: none
+}
+
