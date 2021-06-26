@@ -73,7 +73,7 @@ export default function Countdown() {
                 </Link>
             </h2>
 
-            <h2 style={{ textAlign: "center", "color": "hotpink" }}>DUDU PROMETEU DIA <div style={{ "color": "silver", textDecoration: "underline", fontSize: "70px" }}>{new Date("Aug 23, 2021 00:00:00").toDateString()}</div></h2>
+            <h2 style={{ textAlign: "center", "color": "hotpink" }}>DUDU ME PROMETEU DIA <div style={{ "color": "silver", textDecoration: "underline", fontSize: "70px" }}>{new Date("Aug 23, 2021 00:00:00").toDateString()}</div></h2>
 
 
             <h2>

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import styles from '../styles/Home.module.css'
 import { useEffect, useState } from 'react'
 
 export default function Mari() {
@@ -17,17 +18,17 @@ export default function Mari() {
     }, [v])
 
     return (
-        <>
-            <h1>CREDO QUE DELÍCIA</h1>
-            <h2>
+        <div className={styles.container}>
+            <h1 className={"centered"}>CREDO QUE DELÍCIA</h1>
+            <h2 className={"centered"}>
                 <label htmlFor="i">DIGITE FOFOCA PARA UMA FOFOCA</label>
             </h2>
             <input onChange={(e) => setV(e.target.value)} style={{ marginLeft: "20px", borderWidth: "3px", "borderColor": b }} name="i" id="i" type="text" placeholder="fofoqueira do caralho kkkkkk"></input>
             <Link href="/countdown" >
-                <a>
-                    <button onClick={(e) => onClick(e)} style={{ marginLeft: "20px", "borderColor": b, borderWidth: "25px", fontSize: "50px" }}>ME CLICA QUE VEM FOFOCA</button>
+                <a style={{ display: b === "green" ? "flex" : "none", margin: "30px" }}>
+                    <button onClick={(e) => onClick(e)} style={{ marginLeft: "20px", "borderColor": b, borderWidth: "25px", fontSize: "2rem" }}>ME CLICA QUE VEM FOFOCA</button>
                 </a>
             </Link>
-        </>
+        </div>
     )
 }

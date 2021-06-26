@@ -25,3 +25,6 @@ a {
   pointer-events: none
 }
 
+.centered {
+  text-align: center
+}

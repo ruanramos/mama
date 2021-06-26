@@ -1,22 +1,9 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
-import { useEffect, useState } from 'react';
-import Image from 'next/image'
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import styles from '../styles/Home.module.css';
 
 export default function Home() {
-
-  function enter() {
-    setShowI(true)
-    document.querySelector("#cant-touch").classList.add("hide")
-    document.querySelector("h1").innerText = "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK"
-    document.querySelector("h2").innerText = "COMO SE TIVESSE ESCOLHA"
-
-  }
-
-  const [showI, setShowI] = useState(false)
-
-  const i = <Image id="i" alt="" width="700%" height="500%" src="/3cda3aef-f126-439b-b79b-0a2ad046fb66.jpeg" />
 
   return (
     <div className={styles.container}>
@@ -26,37 +13,31 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Bem vinda Mama ao meu estudo criativo de nextjs!
-        </h1>
+      <main className={styles.main} >
 
-        <h2>Essa é a parte 1</h2>
-        {showI ? i : null}
+        <h2 className={"centered"}>BEM VINDA MAMA!</h2>
+        <h2 className={"centered"}>AQUI VOCÊ TEM ACESSO A TODAS AS SEASONS LANÇADAS E FUTURAS</h2>
 
-        <div className={styles.grid}>
-          <Link href="/mari">
-            <a style={{ "font-size": "50px", "color": "blue" }}>
-              &rarr;&rarr;&rarr;&rarr;&rarr; CLICA AQUI SE VOCÊ QUER ME PEGAR &larr;&larr;&larr;&larr;
-            </a>
-          </Link>
-
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-
-          <Link href="/">
-            <a id="cant-touch" onClick={enter}>
-              clica aqui se não quer me pegar
+        <div className={styles.grid} >
+          <Link href="/seasons/season1">
+            <a style={{ fontSize: "50px", "color": "blue" }}>
+              SEASON 1
             </a>
           </Link>
         </div>
+        <div className={styles.grid}>
+          <Link href="/seasons/season1">
+            <a style={{ fontSize: "50px", color: "lightgray", pointerEvents: 'none' }}>
+              SEASON 2
+            </a>
+          </Link>
+        </div>
+
+
       </main>
 
       <footer className={styles.footer}>
-
+        <Image id="i" alt="" width="100%" height="100%" src="/woody.jpg" />
       </footer>
     </div>
   )
